@@ -1,17 +1,16 @@
-// FormularioCadastro.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const FormularioCadastro = ({ onCadastrar }) => {
-  const [nome, setNome] = useState('');
-  const [contato, setContato] = useState('');
-  const [disciplina, setDisciplina] = useState('');
+  const [nome, setNome] = useState("");
+  const [contato, setContato] = useState("");
+  const [disciplina, setDisciplina] = useState("");
 
   const handleSaveProfessor = () => {
     if (nome && contato && disciplina) {
       onCadastrar({ nome, contato, disciplina });
-      setNome('');
-      setContato('');
-      setDisciplina('');
+      setNome("");
+      setContato("");
+      setDisciplina("");
     }
   };
 

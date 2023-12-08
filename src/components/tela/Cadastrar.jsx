@@ -1,10 +1,9 @@
-// Cadastrar.js
-import React, { useState } from 'react';
-import FormularioCadastro from '../forms/FormularioCadastro';
-import ListaProfessores from '../forms/ListaProfessores';
-import './Cadastrar.css';
+import React, { useState } from "react";
+import FormularioCadastro from "../forms/FormularioCadastro";
+import ListaProfessores from "../forms/ListaProfessores";
+import "./Cadastrar.css";
 
-import Header from '../header/Header'
+import Header from "../header/Header";
 
 const Cadastrar = () => {
   const [professores, setProfessores] = useState([]);
@@ -18,22 +17,29 @@ const Cadastrar = () => {
 
   const handleCadastrarProfessor = (newProfessor) => {
     setProfessores([...professores, newProfessor]);
-    setMostrarFormulario(false); // Oculta o formulário após cadastrar
+    setMostrarFormulario(false);
   };
 
   return (
     <div>
       <Header />
       <div className="cadastrar-container">
-
         <h1>Gerenciador de Professores</h1>
 
-        <button className="cadastrar-button" onClick={() => setMostrarFormulario(!mostrarFormulario)}>
+        <button
+          className="cadastrar-button"
+          onClick={() => setMostrarFormulario(!mostrarFormulario)}
+        >
           Cadastrar Professor
         </button>
 
-        {mostrarFormulario && <FormularioCadastro onCadastrar={handleCadastrarProfessor} />}
-        <ListaProfessores professores={professores} onDeleteProfessor={handleDeleteProfessor} />
+        {mostrarFormulario && (
+          <FormularioCadastro onCadastrar={handleCadastrarProfessor} />
+        )}
+        <ListaProfessores
+          professores={professores}
+          onDeleteProfessor={handleDeleteProfessor}
+        />
       </div>
     </div>
   );

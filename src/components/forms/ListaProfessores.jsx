@@ -1,4 +1,3 @@
-// ListaProfessores.js
 import React from 'react';
 
 const ListaProfessores = ({ professores, onDeleteProfessor }) => {
